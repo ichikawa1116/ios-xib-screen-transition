@@ -13,12 +13,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
 
-
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         
-        let first = FirstViewController()
+        let firstVC = FirstBuilder.build()
         //NavigationControllerを使わない場合はrootにViewControllerをセット
-        let navigationController = UINavigationController(rootViewController: first)
+        let navigationController = UINavigationController(rootViewController: firstVC)
         self.window = UIWindow(frame: UIScreen.main.bounds)
         self.window?.rootViewController = navigationController
         self.window?.makeKeyAndVisible()

@@ -10,19 +10,19 @@ import UIKit
 
 class FirstViewController: UIViewController {
 
-    
+    private var presenter: FirstPresenter?
     override func viewDidLoad() {
         super.viewDidLoad()
         
         self.title = "First"
-
     }
 
+    func configure(presenter: FirstPresenter){
+        self.presenter = presenter
+    }
     
     @IBAction func tapNextButton(_ sender: Any) {
-        let nextVC = SecondViewController()
-        self.navigationController?.pushViewController(nextVC, animated: true)
-
+        self.presenter?.goToNext()
     }
     
 }
